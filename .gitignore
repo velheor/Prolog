@@ -1,0 +1,8 @@
+**/Exe/**
+**/Obj/**
+*.bak
+*.bk1
+*.pre
+*.prj
+*.vpr
+*.inc
