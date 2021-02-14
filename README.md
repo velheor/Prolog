@@ -1,0 +1,2 @@
+# Prolog
+Labs for university
