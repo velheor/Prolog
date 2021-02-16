@@ -6,3 +6,5 @@
 *.prj
 *.vpr
 *.inc
+*.grd
+*.env
