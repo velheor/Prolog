@@ -9,4 +9,3 @@ clauses
 	university(denis, denisov, med).
 goal
 	readln(Z), nl, university(X,Y,Z).
-
