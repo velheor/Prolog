@@ -1,13 +1,9 @@
 include "arithmetictask.inc"
 
 predicates
-	nondeterm belongsToCircle(integer, integer)
+	nondeterm belongsToCircle(real, real)
 clauses
 	belongsToCircle(X,Y) :- 
-		X * X + Y * Y <= 1, Y + X >= 0, write("belongs").
-	belongsToCircle(X,Y) :- 
-		X * X + Y * Y <= 1, Y + X < 0, write("not belongs").
-	belongsToCircle(X,Y) :- 
-		X * X + Y * Y > 1,  write("not belongs").
+		X * X + Y * Y <= 1, Y + X >= 0, write("belongs"), !; write("not belongs").
 goal
-	readint(X), readint(Y), belongsToCircle(X, Y), nl.
+	write("Enter X "), readreal(X), write("Enter Y "), readreal(Y), belongsToCircle(X, Y), nl.
