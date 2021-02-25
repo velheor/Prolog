@@ -1,0 +1,10 @@
+domains
+	i=integer*
+predicates
+	zamena(integer,integer,i,i)
+clauses
+	zamena(_,_,[],[]):-!.
+	zamena(Find,New,[Find|L],[New|L]):-!.
+	zamena(Find,New,[Y|L],[Y|L1]):-Find<>Y,zamena(Find,New,L,L1).
+goal
+	zamena(1,3,[1,3,5,1,6,8],L).
