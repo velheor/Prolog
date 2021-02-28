@@ -1,10 +1,14 @@
 domains
-	i=integer*
+	intlist=integer* 
 predicates
-	zamena(integer,integer,i,i)
+	readList(intlist)
+	plus(intlist,intlist)
+ 
 clauses
-	zamena(_,_,[],[]):-!.
-	zamena(Find,New,[Find|L],[New|L]):-!.
-	zamena(Find,New,[Y|L],[Y|L1]):-Find<>Y,zamena(Find,New,L,L1).
+	readList([X|T]) :- write("Input element: "), readint(X), !, readList(T).
+	readList([]).
+	plus([],[]).
+	plus([X|Xs],[Y|Ys]):- Y = X + 1, plus(Xs,Ys).
+ 
 goal
-	zamena(1,3,[1,3,5,1,6,8],L).
+	readList(Numbers), plus(Numbers, A).
